@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "#!/usr/bin/python3""\n"$PYCODE> main.py | python3 main.py
