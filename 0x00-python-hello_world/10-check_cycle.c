@@ -8,7 +8,19 @@
  */
 int check_cycle(listint_t *list)
 {
+	listint_t *first = list;
+	listint_t *second = list;
 
-	return (1)
+	if (!list)
+		return (0);
 
+	while (first && second && first->next)
+	{
+		first = first->next;
+		second = second->next->next;
+		if (first == second)
+			return (1);
+	}
+
+	return (0);
 }
