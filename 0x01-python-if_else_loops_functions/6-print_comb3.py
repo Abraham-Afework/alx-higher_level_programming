@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-for i in range(0, 100):
+number =[]
+for i in range(0, 99):
     if i < 10:
-        zero = "0"
+        zero = 0
     else:
-        zero =""
+        zero = ""
     if i != 99:
         print("{}{}".format(zero, i), end=", ")
     else:
