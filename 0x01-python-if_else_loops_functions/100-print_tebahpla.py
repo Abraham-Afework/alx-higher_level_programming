@@ -3,6 +3,7 @@ start = ord('z')
 end = ord('a')
 for text in range(start, end-1, -1):
     if text % 2 != 0:
-        print(chr(text).upper(), end="")
+        alpha = chr(text).upper()
     else:
-        print(chr(text), end="")
+        alpha = chr(text)
+    print("{}".format(alpha), end="")
