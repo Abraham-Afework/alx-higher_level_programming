@@ -24,6 +24,7 @@ class Square:
             """ initialize private _size of self with size """
             self.__size = size
 
-        def area(self):
-            """ return the area of a square"""
-            return self.__size ** 2
+    """ defines area function """
+    def area(self):
+        """ return the area of a square"""
+        return self.__size ** 2
