@@ -112,4 +112,4 @@ class Rectangle:
         """ square class
             return: width and height equal to size
         """
-        return cls(size, size)
+        return (cls(size, size))
