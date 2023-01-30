@@ -66,9 +66,8 @@ class Rectangle:
             return rectangle[:-1]
 
     def __repr__(self):
-        """
-        string representation of the rectangle
+        """ string representation of the rectangle
         to be able to recreate a new instance
         :return: the string representation
         """
-        return "Rectangle({:d},{:d})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
