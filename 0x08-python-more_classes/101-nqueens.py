@@ -1,25 +1,26 @@
 #!/usr/bin/python3
-import sys
+Rectangle = __import__('7-rectangle').Rectangle
 
-def main():
-	
-	if  len(sys.argv) != 2:
-		print("Usage: nqueens N")
-		sys.exit(1)
-	try:
-		n = int(sys.argv[1])
-		if n < 4:
-			raise Exception("N must be at least 4")
-		else:
-			print("lets goo..")
-		
-	except ValueError:
-		raise("N must be a number")
-		sys.exit(1)
-	except Exception as err:
-		raise(err)
-		sys.exit(1)
+my_rectangle_1 = Rectangle(8, 4)
+print(my_rectangle_1)
+print("--")
+my_rectangle_1.print_symbol = "&"
+print(my_rectangle_1)
+print("--")
 
-			
-main()
+my_rectangle_2 = Rectangle(2, 1)
+print(my_rectangle_2)
+print("--")
+Rectangle.print_symbol = "C"
+print(my_rectangle_2)
+print("--")
 
+my_rectangle_3 = Rectangle(7, 3)
+print(my_rectangle_3)
+
+print("--")
+
+my_rectangle_3.print_symbol = ["C", "is", "fun!"]
+print(my_rectangle_3)
+
+print("--")
