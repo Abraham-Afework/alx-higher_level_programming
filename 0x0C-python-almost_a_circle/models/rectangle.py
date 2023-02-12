@@ -161,10 +161,13 @@ class Rectangle(Base):
 		Method that prints stdout Rectangle with a character #
 
 		"""
+        string = "\n" * self.__y 
         for h in range(self.__height):
+            character =  " " * self.__x 
             for w in range(self.__width):
-                print("#",end="")
-            print()
+                character += "#"
+            string += character + "\n"
+        print(string,end="")
 
     def __str__(self):
         """
@@ -174,5 +177,4 @@ class Rectangle(Base):
 			str: [Rectangle] (id) x/y - width/height
 		"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
-	
 
