@@ -4,16 +4,20 @@ import json
 import csv
 
 
-
 class Base:
     """
-    class attribute initialized form 0
+    Represents Base Model
+
+    class attribute __nb_objects initialized form 0
+
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
-
+        initialize a new base.
+        Args:
+            -id(int):The identity of Base
         """
         if id is not None:
             self.id = id
