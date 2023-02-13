@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 """Base Class"""
 class Base:
-	__nb_objects = 0
+	"""
+	class attribute initialized form 0
+	"""
+	__nb_objects = 0	
 	def __init__(self, id=None):
+		"""
+		
+		"""
 		if id != None:
 			self.id = id
 		else:
