@@ -31,24 +31,26 @@ class Square(Rectangle):
     """
 
     def __str__(self):
+        """ Returns the string representation of a Square """
 
         return f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
 
-    """  getter method for the square size """
+    
     @property
     def size(self):
+        """  getter method for the square size """
         return self.width
 
-    """ setter method for a square size """
+    
     @size.setter
     def size(self, value):
+        """ setter method for a square size """
         self.width = value
         self.height = value
 
-    """method that updates the suare attributs"""
-
     def update(self, *args, **kwargs):
-        """
+        """ method that updates the suare attributs
+
             *args is the list of arguments - no-keyworded arguments
                             1st argument should be the id attribute
                             2nd argument should be the size attribute
@@ -70,7 +72,7 @@ class Square(Rectangle):
                 self.size = args[1]
                 args[2]
                 self.x = args[2]
-                args[4]
+                args[3]
                 self.y = args[3]
             except IndexError:
                 pass
