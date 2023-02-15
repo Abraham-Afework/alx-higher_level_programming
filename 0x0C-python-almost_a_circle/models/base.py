@@ -104,16 +104,18 @@ class Base:
 
         """
         filename = str(cls.__name__+".json")
-
-        with open(filename) as file:
-            fetched_string = file.read()
-
-        fetched_list = cls.from_json_string(fetched_string)
-
         all_list = []
-        for data in fetched_list:
+        try:
+            with open(filename) as file:
+                fetched_string = file.read()
 
-            all_list.append(cls.create(**data))
+                fetched_list = cls.from_json_string(fetched_string)
+
+                for data in fetched_list:
+                    all_list.append(cls.create(**data))
+
+        except FileNotFoundError:
+            pass
         return all_list
 
     @classmethod
