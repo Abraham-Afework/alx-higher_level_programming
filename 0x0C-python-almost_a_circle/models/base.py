@@ -69,6 +69,8 @@ class Base:
         """
         a static method converts a string to a list
         """
+        if json_string is None:
+            return []
         list_json = json.loads(json_string)
         return list_json
 
@@ -88,16 +90,15 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ Method that loads form the json file 
-
+        """ Method that loads form the json file
                 -opens the file name related to the class name
                 -parses the the fetched string from the file to a list using
-                - created empty list 
+                - created empty list
                 -append the each list after a class instance\
                  is created using create method
             Return:
-                list of the fetched file       
-        
+                list of the fetched file
+
         """
         filename = str(cls.__name__+".json")
 
@@ -108,7 +109,7 @@ class Base:
 
         all_list = []
         for data in fetched_list:
-            
+
             all_list.append(cls.create(**data))
         return all_list
 
@@ -129,9 +130,15 @@ class Base:
 
             if cls.__name__ == "Rectangle":
                 csv_writer.writerow(["id", "width", "height", "x", "y"])
-                
+
                 for obj in list_objs:
-                    csv_writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                    csv_writer.writerow([
+                        obj.id,
+                        obj.width,
+                        obj.height,
+                        obj.x,
+                        obj.y
+                    ])
 
             elif cls.__name__ == "Square":
                 csv_writer.writerow(["id", "size", "x", "y"])
