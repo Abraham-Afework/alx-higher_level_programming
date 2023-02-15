@@ -65,13 +65,13 @@ class Square(Rectangle):
         if len(args) > 0:
             try:
                 args[0]
-                self.id = args[0]
+                self.size = args[0]
                 args[1]
-                self.size = args[1]
+                self.x = args[1]
                 args[2]
-                self.x = args[2]
+                self.y = args[2]
                 args[3]
-                self.y = args[3]
+                self.id = args[3]
             except IndexError:
                 pass
         else:
@@ -91,6 +91,6 @@ class Square(Rectangle):
             'x': self.x,
             'y': self.y,
             'id': self.id,
-            'size': self.height
+            'size': self.width
         }
         return square_dictionary
