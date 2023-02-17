@@ -160,15 +160,18 @@ class Base:
         :return: a list of objects of the class type
         """
         filename = str(cls.__name__) + ".csv"
-        with open(filename, mode='r') as csv_file:
-            csv_reader = csv.reader(csv_file)
-            header = next(reader)
-            all_objs = []
-            for row in csv_reader:
-                if cls.__name__ == "Rectangle":
-                    all_objs.append(cls(int(row[0]), int(row[1]), int(
-                        row[2]), int(row[3]), int(row[4])))
-                elif cls.__name__ == "Square":
-                    all_objs.append(cls(int(row[0]), int(
-                        row[1]), int(row[2]), int(row[3])))
-            return all_objs
+        all_objs = []
+        try:
+            with open(filename, mode='r') as csv_file:
+                csv_reader = csv.reader(csv_file)
+                header = next(csv_reader)
+                for row in csv_reader:
+                    if cls.__name__ == "Rectangle":
+                        all_objs.append(cls(int(row[1]), int(row[2]), int(
+                            row[3]), int(row[4]), int(row[0])))
+                    elif cls.__name__ == "Square":
+                        all_objs.append(cls(int(row[1]), int(
+                            row[2]), int(row[3]), int(row[0])))
+        except FileNotFoundError:
+            pass
+        return all_objs
