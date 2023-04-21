@@ -16,8 +16,8 @@ def RunScript():
         'db': argv[3],
         'charset': 'utf8'
         }
-    query = "SELECT * FROM states WHERE NAME = '{}' ORDER BY id"\
-            .format(argv[4])
+    query = "SELECT * FROM states WHERE NAME LIKE '{}'  COLLATE utf8_bin \
+            ORDER BY id ASC".format(argv[4])
     db = MySQLdb.connect(**config)
     cur = db.cursor()
     cur.execute(query)
