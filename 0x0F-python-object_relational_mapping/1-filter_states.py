@@ -20,7 +20,7 @@ def RunScript():
 
     db = MySQLdb.connect(**config)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE NAME LIKE 'N%' ORDER BY id")
+    cur.execute("SELECT * FROM states WHERE NAME LIKE 'N%' COLLATE utf8_bin")
     rows = cur.fetchall()
 
     for row in rows:
