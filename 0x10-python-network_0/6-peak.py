@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-""" function that finds a peak in a list of unsorted integers."""
+"""contains the function find_peak"""
+
+
 def find_peak(my_list=[]):
+    """ function that finds a peak in a list of unsorted integers."""
     max = None
     if my_list != []:
         max = my_list[0]
@@ -8,5 +11,3 @@ def find_peak(my_list=[]):
             if num > max:
                 max = num
     return max
-
-
